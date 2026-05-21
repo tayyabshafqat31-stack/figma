@@ -1,0 +1,325 @@
+ll<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventoura - Travel Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0B1749',
+                        'lavender': '#BCC4E0',
+                        'muted': '#98959A',
+                        'olive': '#847B66',
+                        'card-bg': '#EEEDEB', // New Card Color
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        .nav-scrolled {
+            background-color: rgba(11, 23, 73, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-white text-2xl font-bold tracking-widest hover:text-olive transition">AVENTOURA</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-olive transition">Home</a>
+                    <a href="#about" class="text-white hover:text-olive transition">About</a>
+                    <a href="#destinations" class="text-white hover:text-olive transition">Destinations</a>
+                    <a href="#services" class="text-white hover:text-olive transition">Services</a>
+                    <a href="#contact" class="text-white hover:text-olive transition">Contact</a>
+                    <button class="bg-lavender text-navy px-6 py-2 rounded-full font-semibold hover:bg-olive hover:text-white transition duration-300">Book Now</button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-navy/95 backdrop-blur-md">
+            <div class="flex flex-col items-center py-8 space-y-6">
+                <a href="#home" class="text-lavender text-lg hover:text-olive transition">Home</a>
+                <a href="#about" class="text-lavender text-lg hover:text-olive transition">About</a>
+                <a href="#destinations" class="text-lavender text-lg hover:text-olive transition">Destinations</a>
+                <a href="#services" class="text-lavender text-lg hover:text-olive transition">Services</a>
+                <a href="#contact" class="text-lavender text-lg hover:text-olive transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE 1: HERO -->
+    <section id="home" class="relative h-screen w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-navy/60"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+            <p class="text-sm tracking-[0.3em] uppercase mb-4 text-lavender">Explore the World</p>
+            <h1 class="text-4xl md:text-7xl font-bold max-w-4xl leading-tight mb-6">
+                Travel the world one place at a time
+            </h1>
+            <p class="text-lg text-lavender/80 max-w-2xl mb-8">Discover the most beautiful places on earth with our exclusive travel guides and packages.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
+                <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-lavender/30">
+                    <div class="bg-lavender p-2 rounded-full text-navy"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+                    <div class="text-left"><p class="text-2xl font-bold text-white">214</p><p class="text-xs text-lavender">Outlets</p></div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-lavender/30">
+                    <div class="bg-lavender p-2 rounded-full text-navy"><i data-lucide="globe" class="w-5 h-5"></i></div>
+                    <div class="text-left"><p class="text-2xl font-bold text-white">37</p><p class="text-xs text-lavender">Countries</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevrons-down" class="w-8 h-8 text-lavender/50"></i>
+        </div>
+    </section>
+
+    <!-- PAGE 2: ABOUT -->
+    <section id="about" class="py-24 px-4 bg-lavender/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-muted uppercase tracking-widest text-sm mb-2">Our Story</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">Travel is the food for the soul.</h2>
+                <div class="w-24 h-1 bg-olive mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative h-96 md:h-[500px]">
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=993&auto=format&fit=crop" class="absolute top-0 left-0 w-64 h-80 object-cover rounded-lg shadow-xl z-10" alt="Map">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=987&auto=format&fit=crop" class="absolute bottom-0 right-0 w-72 h-72 object-cover rounded-lg shadow-xl z-20" alt="Traveler">
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-navy">Start Your Journey With Us</h3>
+                    <p class="text-muted mb-6 leading-relaxed">
+                        "The world is a book and those who do not travel read only one page." We believe in creating experiences that transform you. From the peaks of the Himalayas to the beaches of Bali, we are your trusted companion.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-navy">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-olive"></i> <span>Professional Local Guides</span></li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-olive"></i> <span>Handpicked Luxury Hotels</span></li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-olive"></i> <span>24/7 Customer Support</span></li>
+                    </ul>
+                    <button class="bg-navy text-lavender px-8 py-3 rounded-full font-semibold hover:bg-olive hover:text-white transition duration-300 flex items-center gap-2">
+                        Continue Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: DESTINATIONS -->
+    <section id="destinations" class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-muted uppercase tracking-widest text-sm mb-2">Top Picks</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-navy">Popular Destinations</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-96">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2038&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Bali">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="flex items-center gap-2 text-olive mb-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i> <span class="text-sm">Indonesia</span>
+                        </div>
+                        <h3 class="text-white text-2xl font-bold">Bali Paradise</h3>
+                        <p class="text-lavender/80 text-sm mt-2">Starting from $1,200</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-96">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Paris">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="flex items-center gap-2 text-olive mb-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i> <span class="text-sm">France</span>
+                        </div>
+                        <h3 class="text-white text-2xl font-bold">Paris Romance</h3>
+                        <p class="text-lavender/80 text-sm mt-2">Starting from $1,500</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer h-96">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Italy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <div class="flex items-center gap-2 text-olive mb-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i> <span class="text-sm">Italy</span>
+                        </div>
+                        <h3 class="text-white text-2xl font-bold">Amalfi Coast</h3>
+                        <p class="text-lavender/80 text-sm mt-2">Starting from $1,800</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 4: SERVICES (Updated Card Color) -->
+    <section id="services" class="py-24 px-4 bg-navy">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-olive uppercase tracking-widest text-sm mb-2">What We Offer</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Our Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-card-bg p-8 rounded-2xl shadow-md hover:bg-olive transition duration-500 group text-center">
+                    <i data-lucide="plane" class="w-12 h-12 mx-auto mb-6 text-navy group-hover:text-white transition"></i>
+                    <h3 class="text-xl font-bold mb-3 text-navy group-hover:text-white transition">Flight Booking</h3>
+                    <p class="text-sm text-muted group-hover:text-white/80 transition">Get the best deals on national and international flights.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-card-bg p-8 rounded-2xl shadow-md hover:bg-olive transition duration-500 group text-center">
+                    <i data-lucide="building" class="w-12 h-12 mx-auto mb-6 text-navy group-hover:text-white transition"></i>
+                    <h3 class="text-xl font-bold mb-3 text-navy group-hover:text-white transition">Hotel Booking</h3>
+                    <p class="text-sm text-muted group-hover:text-white/80 transition">Luxury resorts to budget stays, we have it all covered.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-card-bg p-8 rounded-2xl shadow-md hover:bg-olive transition duration-500 group text-center">
+                    <i data-lucide="compass" class="w-12 h-12 mx-auto mb-6 text-navy group-hover:text-white transition"></i>
+                    <h3 class="text-xl font-bold mb-3 text-navy group-hover:text-white transition">Guided Tours</h3>
+                    <p class="text-sm text-muted group-hover:text-white/80 transition">Expert guides to show you hidden gems of cities.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-card-bg p-8 rounded-2xl shadow-md hover:bg-olive transition duration-500 group text-center">
+                    <i data-lucide="headphones" class="w-12 h-12 mx-auto mb-6 text-navy group-hover:text-white transition"></i>
+                    <h3 class="text-xl font-bold mb-3 text-navy group-hover:text-white transition">24/7 Support</h3>
+                    <p class="text-sm text-muted group-hover:text-white/80 transition">We are here for you anytime you need assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 5: CONTACT -->
+    <section id="contact" class="py-24 px-4 bg-lavender/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative h-[600px] hidden md:block rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Contact Us">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent flex flex-col justify-end p-10">
+                        <h3 class="text-white text-4xl font-bold mb-4">Let's Talk Travel</h3>
+                        <p class="text-olive">Visit us or give us a call. We love to hear your travel dreams.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-muted uppercase tracking-widest text-sm mb-2">Contact</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy mb-8">Get In Touch</h2>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <input type="text" placeholder="First Name" class="w-full px-4 py-3 border-b-2 border-muted focus:border-olive outline-none bg-transparent transition text-navy placeholder-muted">
+                            <input type="text" placeholder="Last Name" class="w-full px-4 py-3 border-b-2 border-muted focus:border-olive outline-none bg-transparent transition text-navy placeholder-muted">
+                        </div>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border-b-2 border-muted focus:border-olive outline-none bg-transparent transition text-navy placeholder-muted">
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 border-b-2 border-muted focus:border-olive outline-none bg-transparent transition resize-none text-navy placeholder-muted"></textarea>
+                        
+                        <button type="submit" class="bg-navy text-lavender px-10 py-4 rounded-full font-semibold hover:bg-olive hover:text-white transition duration-300 w-full md:w-auto">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div class="relative h-80 w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2044&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-navy/80 flex flex-col items-center justify-center text-center px-4">
+            <h4 class="text-white text-3xl md:text-4xl font-bold mb-2">Newsletter</h4>
+            <p class="text-lavender mb-8">Subscribe to get the latest updates and news.</p>
+            <div class="flex w-full max-w-md">
+                <input type="email" placeholder="Enter your email" class="w-full px-6 py-3 rounded-l-full focus:outline-none text-navy bg-white placeholder-muted">
+                <button class="bg-olive hover:bg-lavender text-white hover:text-navy font-semibold px-8 py-3 rounded-r-full transition duration-300 uppercase text-sm">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy text-lavender py-16 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="md:col-span-1">
+                <h5 class="text-white text-2xl font-bold mb-4">AVENTOURA</h5>
+                <p class="text-sm leading-relaxed text-muted">Travel makes one modest. You see what a tiny place you occupy in the world.</p>
+            </div>
+            <div>
+                <h6 class="text-white font-semibold mb-4 uppercase tracking-wider">Company</h6>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-olive transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-olive transition">Services</a></li>
+                    <li><a href="#" class="hover:text-olive transition">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-white font-semibold mb-4 uppercase tracking-wider">Support</h6>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-olive transition">Help Center</a></li>
+                    <li><a href="#" class="hover:text-olive transition">Safety</a></li>
+                    <li><a href="#" class="hover:text-olive transition">Cancellation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="text-white font-semibold mb-4 uppercase tracking-wider">Our Office</h6>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-olive"></i> 123 Travel St, NY</li>
+                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-olive"></i> +92 3286930517</li>
+                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-olive"></i> tayyabshafqat597@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-muted/30 mt-12 pt-8 text-center text-sm text-muted">
+            &copy; 2025 Aventoura. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
